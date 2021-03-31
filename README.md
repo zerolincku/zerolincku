@@ -4,4 +4,3 @@
 * Easy: 186
 * Medium: 66
 * Head: 8
-1
