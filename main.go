@@ -83,12 +83,12 @@ func getQuestionProgressInfo() (easy, medium, hard int) {
 	err = json.Unmarshal(body, &mapResult)
 	checkErr(err)
 	// f1(&mapResult)
-	easy, medium, hard = f1(&mapResult)
+	easy, medium, hard = analysisProgressInfo(&mapResult)
 	return
 }
 
 // 解析做题详情
-func f1(mapResult *map[string]interface{}) (easy, medium, hard int) {
+func analysisProgressInfo(mapResult *map[string]interface{}) (easy, medium, hard int) {
 	data := (*mapResult)["data"]
 	userProfileUserQuestionProgress := data.(map[string]interface{})["userProfileUserQuestionProgress"]
 	numAcceptedQuestions := userProfileUserQuestionProgress.(map[string]interface{})["numAcceptedQuestions"]
